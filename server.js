@@ -17,12 +17,14 @@ app.use(express.static("public"));
 
 // Update mongoose to connect to Heroku or the local DB
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/budget", {
+    process.env.MONGODB_URI || 'mongodb://localhost/budget', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
         useFindAndModify: false
-    });
+    }
+);
+
 
 // routes
 app.use(require("./routes/api.js"));
